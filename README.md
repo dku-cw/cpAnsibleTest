@@ -2,7 +2,7 @@
 
 Repository for testing Ansible in combination with Check Point appliances.
 
-#### H4
+#### Ansible Server
 > https://github.com/jimoq/cpAnsibleDemo
 ```
 cd ~
@@ -14,6 +14,7 @@ pip install netaddr
 cd ~
 git clone --recursive https://github.com/CheckPointSW/cpAnsible
 sudo cp -r cpAnsible/check_point_mgmt/ /usr/lib/python2.7/dist-packages/ansible/
+```
 
 > https://github.com/CheckPointSW/cp_mgmt_api_python_sdk
 ```
