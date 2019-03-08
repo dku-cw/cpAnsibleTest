@@ -34,7 +34,7 @@ ansible_ssh_pass=AppliancePassword
 ansible_python_interpreter=/usr/bin/python
 
 [gateway]
-192.168.99.1
+192.168.121.2
 
 [management:vars]
 ansible_user=ApplianceUser
@@ -42,7 +42,7 @@ ansible_ssh_pass=AppliancePassword
 ansible_python_interpreter=/usr/bin/python
 
 [management]
-192.168.98.1
+192.168.121.3
 ```
 
 
@@ -85,6 +85,7 @@ cp /mnt/hgfs/VM_Share/cpAnsible-master/check_point_mgmt/* /usr/share/ansible/che
 
 
 * VM creation Management
+
 ..* "Custom" Settings
 ..* Highest hardware compatibility available
 ..* "I will install the operating system later"
@@ -103,6 +104,7 @@ cp /mnt/hgfs/VM_Share/cpAnsible-master/check_point_mgmt/* /usr/share/ansible/che
 ..* Audio / Printer removed
 
 * Management initial installation
+
 ..* 8 GB Swap, 15 GB System Root, 50 GB Logs, 26 GB Backup and Upgrade
 ..* Management on eth0
 ..* IP 192.168.121.3
