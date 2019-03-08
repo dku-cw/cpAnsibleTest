@@ -56,58 +56,58 @@ cp /mnt/hgfs/VM_Share/cpAnsible-master/check_point_mgmt/* /usr/share/ansible/che
 ```
 
 ###### VM creation Gateway
-* "Custom" Settings
-* Highest hardware compatibility available
-* "I will install the operating system later"
-* Linux - Red Hat Enterprise Linux 7 64-bit (highest version)
-* R80-20_GW for Gateway, R80-20_MGMT for Management
-* 4 GB RAM
-* 1 CPU, 2 Cores
-* VMnet1
-* LSI Logic SAS
-* SCSI
-* [x] "Store virtual disk as a single file"
-* 100 GB SAS HDD
-* ISO file pointing to Gateway ISO
-* 7 Network adapters, first VMnet1 (Host only), second VMnet2, ...
-* USB Controller with option Share Bluetooth devices with the virtual machine disabled
-* Display on default settings
-* Audio / Printer removed
+- "Custom" Settings
+- Highest hardware compatibility available
+- "I will install the operating system later"
+- Linux - Red Hat Enterprise Linux 7 64-bit (highest version)
+- R80-20_GW for Gateway, R80-20_MGMT for Management
+- 4 GB RAM
+- 1 CPU, 2 Cores
+- VMnet1
+- LSI Logic SAS
+- SCSI
+- [x] "Store virtual disk as a single file"
+- 100 GB SAS HDD
+- ISO file pointing to Gateway ISO
+- 7 Network adapters, first VMnet1 (Host only), second VMnet2, ...
+- USB Controller with option Share Bluetooth devices with the virtual machine disabled
+- Display on default settings
+- Audio / Printer removed
 
 
 ###### Gateway initial installation
-* 8 GB Swap, 15 GB System Root, 50 GB Logs, 26 GB Backup and Upgrade
-* Management on eth0
-* IP 192.168.121.2
-* Subnet 255.255.255.0
-* GW 192.168.121.254
+- 8 GB Swap, 15 GB System Root, 50 GB Logs, 26 GB Backup and Upgrade
+- Management on eth0
+- IP 192.168.121.2
+- Subnet 255.255.255.0
+- GW 192.168.121.254
 
 
 ###### VM creation Management
-* "Custom" Settings
-* Highest hardware compatibility available
-* "I will install the operating system later"
-* Linux - Red Hat Enterprise Linux 7 64-bit (highest version)
-* R80-20_GW for Gateway, R80-20_MGMT for Management
-* 4 GB RAM
-* 1 CPU, 2 Cores
-* VMnet1
-* LSI Logic SAS
-* SCSI
-* [x] "Store virtual disk as a single file"
-* 100 GB SAS HDD
-* ISO file pointing to Gateway ISO
-* USB Controller with option Share Bluetooth devices with the virtual machine disabled
-* Display on default settings
-* Audio / Printer removed
+- "Custom" Settings
+- Highest hardware compatibility available
+- "I will install the operating system later"
+- Linux - Red Hat Enterprise Linux 7 64-bit (highest version)
+- R80-20_GW for Gateway, R80-20_MGMT for Management
+- 4 GB RAM
+- 1 CPU, 2 Cores
+- VMnet1
+- LSI Logic SAS
+- SCSI
+- [x] "Store virtual disk as a single file"
+- 100 GB SAS HDD
+- ISO file pointing to Gateway ISO
+- USB Controller with option Share Bluetooth devices with the virtual machine disabled
+- Display on default settings
+- Audio / Printer removed
 
 
 ###### Management initial installation
-* 8 GB Swap, 15 GB System Root, 50 GB Logs, 26 GB Backup and Upgrade
-* Management on eth0
-* IP 192.168.121.3
-* Subnet 255.255.255.0
-* GW 192.168.121.254
+- 8 GB Swap, 15 GB System Root, 50 GB Logs, 26 GB Backup and Upgrade
+- Management on eth0
+- IP 192.168.121.3
+- Subnet 255.255.255.0
+- GW 192.168.121.254
 
 
 
