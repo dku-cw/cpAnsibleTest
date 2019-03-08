@@ -28,21 +28,22 @@ cp -r cpAnsible/check_point_mgmt/ $HOME/.ansible/plugins/modules/
 ```
 /etc/ansible/hosts
 
-[gateway:vars]
-ansible_user=ApplianceUser
-ansible_ssh_pass=AppliancePassword
-ansible_python_interpreter=/usr/bin/python
-
 [gateway]
 192.168.121.2
 
-[management:vars]
+[gateway:vars]
 ansible_user=ApplianceUser
-ansible_ssh_pass=AppliancePassword
-ansible_python_interpreter=/usr/bin/python
+ansible_ssh_pass=AppliancePassword <- Do not use cleartext password!
+ansible_python_interpreter=/usr/bin/python2.7
+
 
 [management]
 192.168.121.3
+
+[management:vars]
+ansible_user=ApplianceUser
+ansible_ssh_pass=AppliancePassword <- Do not use cleartext password!
+ansible_python_interpreter=/usr/bin/python2.7
 ```
 
 

@@ -1,0 +1,90 @@
+---
+# This playbook takes two preinstalled R80.20 VMs and configures them for testing.
+
+# Basics
+- name: Build hosts inventory in memory for localhost
+  hosts: localhost
+  gather_facts: no
+  vars_files:
+  - group_vars/gateway_vars.yml
+  - group_vars/management_vars.yml
+  roles:
+    - role: inventory
+      tags: [ 'always' ]
+
+# Management setup
+- name: Configure Gaia OS on Security Management Server server
+  hosts: 
+  - "{{ target }}"
+  - "{{ groups['gaia_template'][0] }}"
+  connection: local
+  gather_facts: no
+  vars_files:
+  - group_vars/management_vars.yml
+  roles:
+    - role: gaia
+      tags: [ 'mgmt-gaia-cfg' ]
+
+- name: Configure Security Management Server Server using The R80.x Security Management API
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  vars_files:
+  - group_vars/management_vars.yml
+  - fingerprints/management_fp.yml
+  roles:
+    - role: r80api
+      mgmt_fingerprint: "{{ hostvars[groups['sm'][0]]['mgmt_fingerprint'] }}"
+    - role: r80api
+      tags: [ "never", "mgmt-api-cfg" ]
+#      mgmt_fingerprint: "{{ hostvars[groups['sm'][0]]['mgmt_fingerprint'] }}"
+
+
+# ######################### TODO #########################
+# Multiple var files
+# Loops for Gateways, Managements
+
+
+# Security Gateway setup
+- name: Configure Gaia OS on SG server
+  hosts: 
+  - "{{ target }}"
+  - "{{ groups['gaia_template'][0] }}"
+  connection: local
+  gather_facts: no
+  vars_files:
+  - group_vars/gateway_vars.yml
+  roles:
+  - role: gaia
+    tags: [ "gw-gaia-cfg" ]
+    hostname: sm-sg253
+
+- name: Configure SG Server using The R80.x Security Management API
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  vars_files:
+  - group_vars/gateway_vars.yml
+  - fingerprints/gateway_fp.yml
+  roles:
+  - role: r80api
+    hostname: sm-sg253
+    mgmt_server: "{{ groups['sm'][0] }}"
+    mgmt_fingerprint: "{{ hostvars[groups['sm'][0]]['mgmt_fingerprint'] }}"
+    domain: SMC User
+  - role: r80api
+    tags: [ "never", "sg-demo" ]
+    hostname: sm-sg253
+    mgmt_server: "{{ groups['sm'][0] }}"
+#    mgmt_fingerprint: "{{ hostvars[groups['sm'][0]]['mgmt_fingerprint'] }}"
+    domain: SMC User
+
+- name: Deploy our E-comerce web server
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  roles:
+  - role: vmrun
+    tags: [ "never", "sg-demo", "webserver" ]
+    hostname: WebServer
+    type: webserver
