@@ -55,7 +55,7 @@ mkdir /usr/share/ansible/check_point_mgmt
 cp /mnt/hgfs/VM_Share/cpAnsible-master/check_point_mgmt/* /usr/share/ansible/check_point_mgmt
 ```
 
-* VM creation Gateway
+###### H6 VM creation Gateway
     * "Custom" Settings
     * Highest hardware compatibility available
     * "I will install the operating system later"
@@ -74,7 +74,7 @@ cp /mnt/hgfs/VM_Share/cpAnsible-master/check_point_mgmt/* /usr/share/ansible/che
     * Display on default settings
     * Audio / Printer removed
 
-* Gateway initial installation
+###### H6 Gateway initial installation
     * 8 GB Swap, 15 GB System Root, 50 GB Logs, 26 GB Backup and Upgrade
     * Management on eth0
     * IP 192.168.121.2
@@ -84,7 +84,7 @@ cp /mnt/hgfs/VM_Share/cpAnsible-master/check_point_mgmt/* /usr/share/ansible/che
 
 
 
-* VM creation Management
+###### H6 VM creation Management
     * "Custom" Settings
     * Highest hardware compatibility available
     * "I will install the operating system later"
