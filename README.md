@@ -86,11 +86,11 @@ cp /mnt/hgfs/VM_Share/cpAnsible-master/check_point_mgmt/* /usr/share/ansible/che
 
 * VM creation Management
 
-..* "Custom" Settings
+	"Custom" Settings
 
-..* Highest hardware compatibility available
+	Highest hardware compatibility available
 
-..* "I will install the operating system later"
+	"I will install the operating system later"
 
 ..* Linux - Red Hat Enterprise Linux 7 64-bit (highest version)
 
@@ -121,15 +121,11 @@ cp /mnt/hgfs/VM_Share/cpAnsible-master/check_point_mgmt/* /usr/share/ansible/che
 
 * Management initial installation
 
-..* 8 GB Swap, 15 GB System Root, 50 GB Logs, 26 GB Backup and Upgrade
-
-..* Management on eth0
-
-..* IP 192.168.121.3
-
-..* Subnet 255.255.255.0
-
-..* GW 192.168.121.254
+	8 GB Swap, 15 GB System Root, 50 GB Logs, 26 GB Backup and Upgrade
+	Management on eth0
+	IP 192.168.121.3
+	Subnet 255.255.255.0
+	GW 192.168.121.254
 
 
 
