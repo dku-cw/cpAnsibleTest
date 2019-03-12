@@ -1,0 +1,16 @@
+[gateway]
+192.168.121.2
+
+[gateway:vars]
+ansible_user=ApplianceUser
+ansible_ssh_pass=AppliancePassword <- Do not use cleartext password!
+ansible_python_interpreter=/usr/bin/python2.7
+
+
+[management]
+192.168.121.3
+
+[management:vars]
+ansible_user=ApplianceUser
+ansible_ssh_pass=AppliancePassword <- Do not use cleartext password!
+ansible_python_interpreter=/usr/bin/python2.7

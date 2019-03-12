@@ -73,18 +73,8 @@
     mgmt_fingerprint: "{{ hostvars[groups['sm'][0]]['mgmt_fingerprint'] }}"
     domain: SMC User
   - role: r80api
-    tags: [ "never", "sg-demo" ]
+    tags: [ "never", "gw-api-cfg" ]
     hostname: sm-sg253
     mgmt_server: "{{ groups['sm'][0] }}"
 #    mgmt_fingerprint: "{{ hostvars[groups['sm'][0]]['mgmt_fingerprint'] }}"
     domain: SMC User
-
-- name: Deploy our E-comerce web server
-  hosts: localhost
-  connection: local
-  gather_facts: no
-  roles:
-  - role: vmrun
-    tags: [ "never", "sg-demo", "webserver" ]
-    hostname: WebServer
-    type: webserver
